@@ -1,0 +1,9 @@
+pub const TIMESTAMP_BITS: u64 = 41;
+pub const MACHINE_ID_BITS: u64 = 10;
+pub const SEQUENCE_BITS: u64 = 12;
+pub const TIMESTAMP_SHIFT: u64 = MACHINE_ID_BITS + SEQUENCE_BITS; // 22
+pub const MAX_TIMESTAMP_MS: i64 = (1i64 << TIMESTAMP_BITS) - 1; // Maximum 41-bit value
+pub const MAX_MACHINE_ID: u64 = (1 << MACHINE_ID_BITS) - 1;
+pub const MAX_SEQUENCE: u64 = (1 << SEQUENCE_BITS) - 1;
+pub const SNOWFLAKE_ID_EPOCH: i64 = 1288834974657; // Default epoch (Twitter's epoch)
+pub const CLOCK_BACKWARDS_TOLERANCE_MS: i64 = 5; // Tolerate up to 5ms backwards clock movement
